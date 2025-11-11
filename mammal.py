@@ -1,5 +1,5 @@
 '''
-File: mammal.py
+File: animal.py
 Description: Mammal subclass with unique behaviors.
 Author: Manraj Singh Randhawa
 ID: 110480393
