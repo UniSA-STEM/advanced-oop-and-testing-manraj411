@@ -1,9 +1,9 @@
 '''
-File: filename.py
-Description: A brief description of this Python module.
-Author: Billy Bizilis
-ID: 110100110
-Username: bizvy001
+File: animal.py
+Description: Abstract base class for all animals.
+Author: Manraj Singh Randhawa
+ID: 110480393
+Username: manraj411
 This is my own work as defined by the University's Academic Integrity Policy.
 '''
 
@@ -12,6 +12,7 @@ from datetime import datetime
 from health_record import HealthRecord
 
 class Animal(ABC):
+    """Base class for all animals in the zoo."""
     def __init__(self, name: str, species: str, age: int, diet: str):
         if not name or not species or age < 0:
             raise ValueError("Invalid animal data provided.")
@@ -19,7 +20,7 @@ class Animal(ABC):
         self._species = species
         self._age = age
         self._diet = diet
-        self._health_records = []
+        self._health_records = []  # Stores animal health history
 
     @property
     def name(self):
@@ -30,10 +31,12 @@ class Animal(ABC):
         return self._species
 
     def add_health_record(self, description: str, severity: str):
+        """Add a new health issue for this animal."""
         record = HealthRecord(datetime.now(), description, severity)
         self._health_records.append(record)
 
     def get_health_report(self):
+        """Return a formatted string of all health issues."""
         if not self._health_records:
             return f"{self._name} has no recorded health issues."
         report = f"Health Report for {self._name}:\n"
@@ -43,6 +46,7 @@ class Animal(ABC):
 
     @abstractmethod
     def make_sound(self):
+        """Each animal subclass must implement its sound."""
         pass
 
     def eat(self):
