@@ -1,6 +1,6 @@
 '''
 File: main.py
-Description: Manages animal housing and cleanliness.
+Description: Demonstration script showing zoo system in action.
 Author: Manraj Singh Randhawa
 ID: 110480393
 Username: manraj411
